@@ -1,21 +1,43 @@
 // 마인크래프트 블록 파티클 트레일
-const TRAIL_COLORS = ["#5d9e32", "#8b5a2b", "#9e9e9e", "#6a3c1f", "#4a7c59", "#c6b96b"];
+const TRAIL_IMAGES = [
+  "./images/blocks/11.png",
+  "./images/blocks/12.png",
+  "./images/blocks/13.png",
+  "./images/blocks/14.png",
+  "./images/blocks/15.png",
+  "./images/blocks/16.png",
+  "./images/blocks/17.png",
+  "./images/blocks/18.png",
+  "./images/blocks/19.png",
+];
+
 let lastTrail = 0;
 
 document.addEventListener("mousemove", (e) => {
   const now = Date.now();
-  if (now - lastTrail < 40) return;
+  if (now - lastTrail < 50) return;
   lastTrail = now;
 
   const pixel = document.createElement("div");
   pixel.classList.add("pixel-trail");
-  pixel.style.backgroundColor =
-    TRAIL_COLORS[Math.floor(Math.random() * TRAIL_COLORS.length)];
-  pixel.style.left = e.clientX - 4 + "px";
-  pixel.style.top = e.clientY - 4 + "px";
+
+  const randomImage =
+    TRAIL_IMAGES[Math.floor(Math.random() * TRAIL_IMAGES.length)];
+
+  const driftX = Math.floor(Math.random() * 16 - 8);   // -8 ~ 7
+  const rotate = Math.floor(Math.random() * 41 - 20);  // -20 ~ 20
+
+  pixel.style.backgroundImage = `url("${randomImage}")`;
+  pixel.style.left = `${e.clientX - 10}px`;
+  pixel.style.top = `${e.clientY - 10}px`;
+  pixel.style.setProperty("--drift-x", `${driftX}px`);
+  pixel.style.setProperty("--rotate", `${rotate}deg`);
 
   document.body.appendChild(pixel);
-  setTimeout(() => pixel.remove(), 500);
+
+  setTimeout(() => {
+    pixel.remove();
+  }, 700);
 });
 
 // TIL 기능
