@@ -547,3 +547,25 @@ footer {
   font-size: 0.85rem;
   margin-top: 24px;
 }
+
+
+.til-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.delete-btn {
+  border: none;
+  background-color: #e74c3c;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.delete-btn:hover {
+  background-color: #c0392b;
+}
