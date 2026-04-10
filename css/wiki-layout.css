@@ -89,11 +89,14 @@ html {
 }
 
 body {
-  margin: 0;
+margin: 0;
   color: var(--mc-text);
-  background:
-    linear-gradient(to bottom, var(--mc-bg-top) 0%, var(--mc-bg-bottom) 40%, #cdb58a 40%, #b28a5d 100%);
   font-family: "Pretendard", "Noto Sans KR", sans-serif;
+  background-image: url("../images/bgimg.png");
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center top;
+  background-color: #8a8a8a;
 }
 
 img {
@@ -154,9 +157,6 @@ img {
   display: flex;
   justify-content: center;
   padding: 64px 24px;
-  background:
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0)),
-    linear-gradient(to bottom, #9fd3ff 0%, #cdeaff 100%);
   border-bottom: 4px solid #7d5b3d;
 }
 
@@ -583,7 +583,7 @@ main {
 .comment-buttons button[type="button"] {
   background: var(--mc-grass);
   color: #fff;
-  box-shadow: 3px 3px 0 #2c5319;
+  box-shadow: 3px 3px 0 #618d4b;
 }
 
 .comment-buttons button[type="reset"] {
